@@ -20,9 +20,9 @@ class StoryGenerator:
         serviceurl = os.getenv("CHOREO_OPENAI_CONNECTION_SERVICEURL")
 
         if openai_api_key and serviceurl:
-            return ChatOpenAI(model="gpt-4-turbo", openai_api_key=openai_api_key, serviceurl=serviceurl)
+            return ChatOpenAI(model="gpt-4o-mini", openai_api_key=openai_api_key, serviceurl=serviceurl)
         
-        return ChatOpenAI(model_name="gpt-4-turbo")
+        return ChatOpenAI(model_name="gpt-4o-mini")
     
     @classmethod
     def generate_story(cls, db: Session, session_id: str, theme: str = "fantasy") -> Story:
